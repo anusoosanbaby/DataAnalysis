@@ -1,5 +1,3 @@
-# Hello-World
-first repository
-test moredadad
+# SQL Experiments
 
-fasdfafda
+This is my sql experiments
