@@ -2,7 +2,7 @@
 
 SQL is a powerful tool for analyzing data, offering extensive capabilities to filter, aggregate, and transform information stored in databases. However, in many practical scenarios, the data we need to analyze is not initially found within a SQL database but rather in more accessible formats such as Excel or CSV files. This presents a challenge: how do we efficiently transfer this data into a SQL table for analysis? This process of importing external data into a database is crucial for leveraging SQL's full analytical power on datasets that reside outside traditional database systems.
 
-Exporting an Excel sheet into PostgreSQL is a common task that many database administrators and developers need to perform. There are various methods to accomplish this, each with its own set of steps. Here, we discuss several effective ways to export data from an Excel sheet into PostgreSQL, focusing primarily on converting the Excel sheet into CSV format, as it's one of the most straightforward and universally accepted methods for data import across different database systems.
+Importing an Excel sheet into PostgreSQL is a common task that many database administrators and developers need to perform. There are various methods to accomplish this, each with its own set of steps. Here, we discuss several effective ways to import data from an Excel sheet into PostgreSQL, focusing primarily on converting the Excel sheet into CSV format, as it's one of the most straightforward and universally accepted methods for data import across different database systems.
 
 
 ### **1.Convert Your Excel Sheet to CSV**
@@ -35,14 +35,19 @@ Before importing the CSV file into PostgreSQL, you need to prepare the database.
 </p>
 
 ### **3. Importing CSV into PostgreSQL**
-Once you have your CSV file and a corresponding table in PostgreSQL, you can import the data:
+
+Once you have your CSV file and a corresponding table in PostgreSQL, you can import the data in several ways as explained below.
+
 #### Using the COPY Command:
 PostgreSQL’s COPY command is a quick way to import data from a CSV file. This command requires that the table already exists in the database and that the CSV file's column structure matches that of the table.
-<p align="center">
-  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/b38cb968-0739-419a-92b4-35824eb78ee9" alt="Alt text for the image">
-  <br>
-  <em>Use Copy command to import data into table.</em>
-</p>
+
+```sql
+COPY table_name FROM 'path to csv file' DELIMITER ',' CSV HEADER;
+```
+Here is an example from my work.
+```sql
+COPY persons FROM 'C:\Repos\sql-experiments\portfolioprojects\persons.csv' DELIMITER ',' CSV HEADER;
+```
 
 #### Using PgAdmin:
 PgAdmin provides a graphical interface for importing CSV files. Right-click on the table you want to import data into, select the Import/Export option, choose "Import," and then configure the import settings to match your CSV file (e.g., specifying the delimiter as a comma, indicating if your file includes a header, etc.).
@@ -66,17 +71,10 @@ PgAdmin provides a graphical interface for importing CSV files. Right-click on t
 
 ### **4. Post-Import Checks**
 After importing your data, it's crucial to perform some checks to ensure that the import process was successful.Run some SELECT queries to check if the data has been imported correctly.
-<p align="center">
-  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/b07c0144-17fa-4153-846d-e5218f2a81f3" alt="Alt text for the image">
-  <br>
-  <em>SELECT Command</em>
-</p>
 
-<p align="center">
-  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/c95097e4-e08d-4dca-a323-4305038d3012" alt="Alt text for the image">
-  <br>
-  <em>Table View</em>
-</p>
+```sql
+SELECT *FROM persons;
+```
 
 Converting an Excel sheet to a CSV file and importing it into PostgreSQL is a straightforward process that involves preparing both your data and the database for the import. By following these steps, you can efficiently transfer data from Excel to PostgreSQL, enabling you to leverage the powerful features of this database management system for storing, querying, and analyzing your data.
 
