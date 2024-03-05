@@ -9,7 +9,7 @@ Hierarchical data is structured in a parent-child relationship, where each recor
 ## Self Joins for Hierarchical Data ##
 A self join is used when you need to join a table to itself. This technique is particularly useful for comparing rows within the same table or querying hierarchical data where each row may reference another row within the same table. Self joins are ideal for direct parent-child relationships, making them perfect for simple hierarchies where you need to link each record to its direct parent or child. For example, finding an employee and their immediate manager is a classic use case.
 
-Let's delve into understanding self joins by analyzing organizational hierarchy with a specific example. Consider a table named Employee that includes columns for ID, Name, Salary, and ManagerID.
+Let's delve into understanding self joins by analyzing organizational hierarchy with a specific example. Consider a table named *Employee* that includes columns for * ID *, *Name*, *Salary*, and *ManagerID*.
 
 ```sql
 CREATE TABLE employee(
@@ -29,8 +29,11 @@ INSERT INTO employee VALUES
 (5,'Dave Smith',4000,1);
 )
 ```
-
-
+<p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/7f79861f-f2b5-4389-8ca5-e50587a7790c" alt="Alt text for the image">
+  <br>
+  <em>Employee Table</em>
+</p>
  
 To obtain a list of employees and their immediate managers from an organizational database, you would typically use a self join. Here's how you can achieve this:
 
@@ -39,64 +42,53 @@ SELECT e1.name AS Employee, e2.name AS Manager
 FROM employee e1
 JOIN employee e2 ON e1.manager_id = e2.id;
 ```
- 
+<p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/e376116b-0e13-4951-9e0a-6ed53ad03961" alt="Alt text for the image">
+  <br>
+  <em>Employees with Immediate Manager Names</em>
+</p>
+
 A self join is simply when you join a table with itself. There is no SELF JOIN keyword, you just write an ordinary join where both tables involved in the join are the same table. It is necessary to use an alias for the table to avoid ambiguity.
 Self joins in SQL offer a powerful method for analyzing and extracting valuable insights from relational data within a single table. Whether you're dissecting organizational hierarchies, unraveling product affinities, or sequencing events, mastering self joins can significantly enhance your data analysis capabilities. By understanding and applying this technique, you unlock a new level of data exploration and insight generation.
 
 ## Recursive CTEs for Complex Hierarchies ##
-Recursive CTEs take it a step further, allowing for more complex hierarchical queries that can traverse multiple levels of parent-child relationships. They're especially useful for deep hierarchies where you need to navigate from the top to the bottom of the structure or aggregate data across the hierarchy. They are perfect for situations where you need to traverse more than one level of the hierarchy, such as listing all ancestors or descendants in a family tree, and when you need to dynamically build paths from a node to its root or to leaf nodes.
-Consider the following example to list all employees along with their level in the hierarchy for the above employee table:
-
+To find an employee's entire management chain, including their manager's manager and higher, you can adjust a query to track the hierarchy. This involves appending managers' names or IDs as you move up the hierarchy with a recursive CTE, giving a clear view of each employee's management lineage.
 ```sql
 WITH RECURSIVE OrgChart AS (
-    SELECT
-        id,
-        name,
-        manager_id,
-        1 AS Level
-    FROM employee
-    WHERE manager_id IS NULL
-    UNION ALL
-    SELECT
-        e.id,
-        e.name,
-        e.manager_id,
-        oc.Level + 1
-    FROM employee e
-    JOIN OrgChart oc ON e.manager_id = oc.id
-)
-SELECT * FROM OrgChart;
-```
-
-The use of the RECURSIVE keyword signals to the SQL engine that the CTE will call itself, enabling it to handle tasks that would be difficult or impossible to express with standard SQL queries.
- 
-Let's break down the recursive query for better understanding.
-
-```sql
-SELECT
+  SELECT
     id,
     name,
     manager_id,
-    1 AS Level
+    name::text AS ManagementChain 
   FROM employee
-  WHERE manager_id IS NULL
-```
-
-
-This part of the query, before the UNION ALL, selects the top-level employees (typically the highest-ranking officials in an organization), indicated by ManagerID being NULL. It assigns these employees a hierarchy level of 1. This serves as the base case for the recursion, starting the hierarchy with those who do not report to anyone else.
-
-```sql
+  WHERE manager_id IS NULL -- Top-level managers who have no managers
+  
+  UNION ALL
+  
   SELECT
     e.id,
     e.name,
     e.manager_id,
-    oc.Level + 1
-  FROM Employee e
-  JOIN OrgChart oc ON e.manager_id = oc.id
+    oc.ManagementChain || ' -> ' || e.name::text 
+  FROM employee e
+  JOIN OrgChart oc ON e.manager_id = oc.id -- Join on manager_id to find the next level manager
+)
+SELECT * FROM OrgChart;
 ```
 
-After the UNION ALL, this part of the query performs the recursion. It joins the Employee table to the OrgChart CTE itself. For each employee (e), it finds their manager (oc) by matching e.ManagerID with oc.ID. It then increments the Level by 1, indicating that these employees are one level deeper in the hierarchy than their managers.
-The final SELECT * FROM OrgChart; statement retrieves the entire organizational chart created by the CTE. It lists every employee, their manager, and their level within the organizational hierarchy, from the top-level down to the last employee.
+<p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/61194687-1159-455a-98fa-c475cc9a9944" alt="Alt text for the image">
+  <br>
+  <em>Employees with Levels</em>
+</p>
+
+The use of the **RECURSIVE** keyword signals to the SQL engine that the CTE will call itself, enabling it to handle tasks that would be difficult or impossible to express with standard SQL queries.
+ 
+Let's break down the recursive query for better understanding.
+The ManagementChain column is introduced to keep track of each employee's management hierarchy. Initially, for top-level managers (where manager_id is NULL), the management chain starts with their own name.
+As the recursion progresses (UNION ALL section), the query concatenates the current employee's name to the ManagementChain of their manager, using the || operator to append the names, thereby constructing a chain of management from the top-level manager down to the employee.
+This approach results in a ManagementChain column that outlines the skip-level management path for each employee, from the top of the organization down to them.
+
 ## Conclusion ##
 The choice between using a self join or a recursive CTE depends on the complexity of the hierarchy and the specific requirements of your query. Self joins are best for simple, direct relationships within the hierarchy. They're straightforward and perform well for linking records in a one-step parent-child relationship. Recursive CTEs shine when dealing with complex, multi-level hierarchies. They offer flexibility and power for traversing and aggregating data across multiple levels of the hierarchy.
 Hierarchical data presents unique challenges in data management and analysis. SQL's self joins and recursive CTEs provide robust tools for navigating and manipulating these structures. Understanding the strengths and applications of each can helpe and precision.
