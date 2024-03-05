@@ -9,7 +9,7 @@ Hierarchical data is structured in a parent-child relationship, where each recor
 ## Self Joins for Hierarchical Data ##
 A self join is used when you need to join a table to itself. This technique is particularly useful for comparing rows within the same table or querying hierarchical data where each row may reference another row within the same table. Self joins are ideal for direct parent-child relationships, making them perfect for simple hierarchies where you need to link each record to its direct parent or child. For example, finding an employee and their immediate manager is a classic use case.
 
-Let's delve into understanding self joins by analyzing organizational hierarchy with a specific example. Consider a table named *Employee* that includes columns for * ID *, *Name*, *Salary*, and *ManagerID*.
+Let's delve into understanding self joins by analyzing organizational hierarchy with a specific example. Consider a table named *Employee* that includes columns for *ID*, *Name*, *Salary*, and *ManagerID*.
 
 ```sql
 CREATE TABLE employee(
@@ -79,7 +79,7 @@ SELECT * FROM OrgChart;
 <p align="center">
   <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/61194687-1159-455a-98fa-c475cc9a9944" alt="Alt text for the image">
   <br>
-  <em>Employees with Levels</em>
+  <em>Employees with Managers chain</em>
 </p>
 
 The use of the **RECURSIVE** keyword signals to the SQL engine that the CTE will call itself, enabling it to handle tasks that would be difficult or impossible to express with standard SQL queries.
