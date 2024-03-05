@@ -39,7 +39,7 @@ Before importing the CSV file into PostgreSQL, you need to prepare the database.
 Once you have your CSV file and a corresponding table in PostgreSQL, you can import the data in several ways as explained below.
 
 #### Using the COPY Command:
-PostgreSQL’s COPY command is a quick way to import data from a CSV file. This command requires that the table already exists in the database and that the CSV file's column structure matches that of the table.
+PostgreSQL's COPY command is a quick way to import data from a CSV file. This command requires that the table already exists in the database and that the CSV file's column structure matches that of the table.
 
 ```sql
 COPY table_name FROM 'path to csv file' DELIMITER ',' CSV HEADER;
