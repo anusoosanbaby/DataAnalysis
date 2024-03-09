@@ -74,7 +74,8 @@ INSERT INTO employeeperformance VALUES
 )
 ```
 <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="![image](https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/7c452698-f285-4dec-b30a-383092c7f7f5)
+" alt="Alt text for the image">
   <br>
   <em>Employee Performnace Table</em>
 </p>
@@ -98,7 +99,8 @@ FROM employeeperformance;
 )
 ```
 <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="![image](https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/1fb16dce-0a8e-43d2-b3fb-23b02a6cb0ad)
+" alt="Alt text for the image">
   <br>
   <em>Average Sales per Year</em>
 </p>
@@ -134,7 +136,8 @@ FROM employeeperformance
 )
 ```
 <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="![image](https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/db06e172-8db3-42a7-9c40-5f12cd8d1bd7)
+" alt="Alt text for the image">
   <br>
   <em>Ranking Rows</em>
 </p>
@@ -175,7 +178,8 @@ ORDER BY employee_id, year, quarter;
 ```
 
 <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="![image](https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/50c55df6-bca0-4c26-9730-f48d21cbc2a7)
+" alt="Alt text for the image">
   <br>
   <em>Average Sales per Year</em>
 </p>
@@ -198,7 +202,8 @@ FROM employeeperformance;
 ```
 
 <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="![image](https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/e379da6b-7db4-4c67-8adf-40e9fbac4f3f)
+" alt="Alt text for the image">
   <br>
   <em>tiling the Rws</em>
 </p>
@@ -228,4 +233,4 @@ Window functions in SQL are essential for advanced data analysis, offering insig
 These applications highlight the flexibility and power of window functions in facilitating complex analyses across various industries.
 
 ## Conclusion
-. Window functions in PostgreSQL unlock sophisticated data analysis capabilities, allowing for intricate calculations across related data rows without complex joins. They enhance data insights through functionalities like trend analysis, ranking, and segmentation, crucial for informed decision-making. This exploration demonstrates their versatility and power in transforming raw data into actionable intelligence across various industries.
+Window functions in PostgreSQL unlock sophisticated data analysis capabilities, allowing for intricate calculations across related data rows without complex joins. They enhance data insights through functionalities like trend analysis, ranking, and segmentation, crucial for informed decision-making. This exploration demonstrates their versatility and power in transforming raw data into actionable intelligence across various industries.
