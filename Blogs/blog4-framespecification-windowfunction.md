@@ -59,6 +59,7 @@ INSERT INTO employeeperformance VALUES
   <br>
   <em>Employee Performance Table</em>
 </p>
+
 ### ROWS PRECEDING ###
 
 `ROWS PRECEDING` specifies the  aggregate functions in the current partition in the `OVER` clause will consider the current row, and a specific number of rows before the current row.
@@ -93,7 +94,7 @@ ORDER BY employee_id;
 <p align="center">
   <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/995fa858-74d0-4a0d-8b40-b186ff51c02f" alt="Alt text for the image">
   <br>
-  <em>Sum Of The Current And The Two FollowingSales Amounts For Each Employee</em>
+  <em>Sum Of The Current And The Two Following Sales Amounts For Each Employee</em>
 </p>
 ### BOTH PRECEDING AND FOLLOWING
 `PRECEDING` and `FOLLOWING` in a single statement show how many rows before and after the current row.
