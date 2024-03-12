@@ -96,6 +96,7 @@ ORDER BY employee_id;
   <br>
   <em>Sum Of The Current And The Two Following Sales Amounts For Each Employee</em>
 </p>
+
 ### BOTH PRECEDING AND FOLLOWING
 `PRECEDING` and `FOLLOWING` in a single statement show how many rows before and after the current row.
 ```sql
@@ -120,7 +121,7 @@ This SQL query calculates the sum of sales amounts for each employee in the `emp
 SELECT employee_id, employee_name,quarter,year,sales_amount,
   SUM(sales_amount) OVER (PARTITION by employee_id
  ORDER BY sales_amount
- ROWS UNBOUNDED PRECEDING ) as BeforeandAfter
+ ROWS UNBOUNDED PRECEDING ) as UnboundPreceding
 FROM employeeperformance
 ORDER BY employee_id;
 ```
@@ -135,7 +136,7 @@ When you use `UNBOUNDED FOLLOWING` in a window function's `OVER` clause, you're 
 SELECT employee_id, employee_name,quarter,year,sales_amount,
   SUM(sales_amount) OVER (PARTITION by employee_id
  ORDER BY sales_amount
- ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING ) as BeforeandAfter
+ ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING ) as UnboundFollowing
 FROM employeeperformance
 ORDER BY employee_id;
 ```
@@ -144,7 +145,9 @@ ORDER BY employee_id;
   <br>
   <em>Unbounded Following</em>
 </p>
-### RANGES
+
+### RANGE ###
+
 `ROWS` means the specific row or rows specified, and `RANGE` refers to those same rows plus any others that have the same matching values.
 ```SQL
 SELECT employee_id, employee_name,quarter,year,sales_amount,
@@ -165,6 +168,8 @@ ORDER BY employee_id;
   <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/e26c53c7-d56d-44a5-8afd-5cd9a3f47b5a" alt="Alt text for the image">
   <br>
   <em>Range vs Rows</em>
-</p>                   
+</p> 
+
 ## CONCLUSION
+
 The frame specification in SQL window functions is a powerful feature that allows for precise control over the set of rows used in calculations for each row in the query's result set. Understanding and using frame specifications effectively can enhance data analysis, reporting, and the generation of insights from structured data.  Proper use of frame specifications can significantly enhance the utility of SQL for business intelligence, financial analysis, operational reporting, and other areas where insights derived from historical data are critical.In summary, frame specifications in window functions are an indispensable tool in the SQL querying toolkit, offering the ability to conduct sophisticated and precise analyses directly within a database. 
