@@ -54,8 +54,13 @@ INSERT INTO employeeperformance VALUES
 (104,'Danny','Q1',2024,22000),
 (104,'Danny','Q2',2024,22000)
 ```
- 
-### ROWS PRECEDING
+ <p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/da2ddddf-dcbe-42c8-98dd-7b0712b1a5fc" alt="Alt text for the image">
+  <br>
+  <em>Employee Performance Table</em>
+</p>
+### ROWS PRECEDING ###
+
 `ROWS PRECEDING` specifies the  aggregate functions in the current partition in the `OVER` clause will consider the current row, and a specific number of rows before the current row.
 ```sql
 SELECT employee_id, employee_name,quarter,year,sales_amount,
@@ -66,6 +71,13 @@ FROM employeeperformance
 ORDER BY employee_id;
 ```
 SQL query calculates the sum of the current and the previous two sales amounts for each employee within the `employeeperformance` table. It partitions the data by *employee_id* , ensuring that the calculation is done separately for each employee.
+
+ <p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/22975ec0-c024-4a59-8ee0-68c9e72395c5" alt="Alt text for the image">
+  <br>
+  <em> Sum Of The Current And The Previous Two Sales Amounts For Each Employee</em>
+</p>
+
  
 ### ROWS FOLLOWING
 The `ROWS FOLLOWING` option specifies a specific number of rows in the current partition to use after the current row.
@@ -78,7 +90,11 @@ FROM employeeperformance
 ORDER BY employee_id;
 ```
  This SQL query calculates the sum of the sales amount for the current row and the two following rows for each employee within the `employeeperformance` table.
-
+<p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/995fa858-74d0-4a0d-8b40-b186ff51c02f" alt="Alt text for the image">
+  <br>
+  <em>Sum Of The Current And The Two FollowingSales Amounts For Each Employee</em>
+</p>
 ### BOTH PRECEDING AND FOLLOWING
 `PRECEDING` and `FOLLOWING` in a single statement show how many rows before and after the current row.
 ```sql
@@ -91,6 +107,11 @@ ORDER BY employee_id;
 ```
 This SQL query calculates the sum of sales amounts for each employee in the `employeeperformance` table, considering the current row's sales amount, one preceding row's sales amount, and one following row's sales amount within the same employee partition.
  
+<p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/26345896-92d7-469d-b5f9-7c28b2c5a94e" alt="Alt text for the image">
+  <br>
+  <em>Sum of One Preceding And One Following</em>
+</p>
 
 ### UNBOUNDED
 `UNBOUNDED PRECEDING` tells the windowing function and aggregates to use the current value, and all values in the partition before the current value. Using `UNBOUNDED PRECEDING` and `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` in the context of window functions will provide the same result. Both expressions specify that the window frame includes all rows from the beginning of the partition up to the current row.
@@ -102,8 +123,11 @@ SELECT employee_id, employee_name,quarter,year,sales_amount,
 FROM employeeperformance
 ORDER BY employee_id;
 ```
-
-
+<p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/1effdaa5-46ef-4bc0-9301-a71f867062c1" alt="Alt text for the image">
+  <br>
+  <em>Unbounded Preceding</em>
+</p>
 
 When you use `UNBOUNDED FOLLOWING` in a window function's `OVER` clause, you're defining the window frame's end boundary to extend to the last row of the partition. This is useful when you want to include all rows from the current row to the end of the partition in your calculation.
 ```SQL
@@ -114,7 +138,11 @@ SELECT employee_id, employee_name,quarter,year,sales_amount,
 FROM employeeperformance
 ORDER BY employee_id;
 ```
- 
+ <p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/613f6e61-1aee-48ad-aac0-0d72209017b4" alt="Alt text for the image">
+  <br>
+  <em>Unbounded Following</em>
+</p>
 ### RANGES
 `ROWS` means the specific row or rows specified, and `RANGE` refers to those same rows plus any others that have the same matching values.
 ```SQL
@@ -132,6 +160,10 @@ ORDER BY employee_id;
   * `ROWS UNBOUNDED PRECEDING`: This frame specification tells the database to include in the calculation all rows from the start of the partition up to the current row. It considers the physical order of rows as determined by the `ORDER BY` clause.
 * `RANGE UNBOUNDED PRECEDING`: Similar to `ROWS UNBOUNDED PRECEDING`, this includes all rows from the start of the partition up to the current row, but it groups rows with the same *sales_amount*  value together. This means if multiple rows have the same*sales_amount* , they are treated as a single group in the calculation, and the function's result is the same for all these rows.
  
-                       
+    <p align="center">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/e26c53c7-d56d-44a5-8afd-5cd9a3f47b5a" alt="Alt text for the image">
+  <br>
+  <em>Range vs Rows</em>
+</p>                   
 ## CONCLUSION
 The frame specification in SQL window functions is a powerful feature that allows for precise control over the set of rows used in calculations for each row in the query's result set. Understanding and using frame specifications effectively can enhance data analysis, reporting, and the generation of insights from structured data.  Proper use of frame specifications can significantly enhance the utility of SQL for business intelligence, financial analysis, operational reporting, and other areas where insights derived from historical data are critical.In summary, frame specifications in window functions are an indispensable tool in the SQL querying toolkit, offering the ability to conduct sophisticated and precise analyses directly within a database. 
