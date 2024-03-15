@@ -5,7 +5,7 @@ Let's create various visualizations using this table of data, which includes dif
 <p align="center">
   <img src=" " alt="Alt text for the image">
   <br>
-  <em>Excel worksheet</em>
+  <em>Snippet of Excel Data</em>
 </p>
 
 ## Dynamic Dashboards
@@ -14,7 +14,7 @@ Dynamic dashboards in Excel are not just visually appealing; they're interactive
  <p align="center">
   <img src=" " alt="Alt text for the image">
   <br>
-  <em>Excel worksheet</em>
+  <em>An Interactive Dashboard</em>
 </p>
 
 ## Conditional Formatting for Data Visualization
@@ -23,19 +23,24 @@ Conditional formatting isn't just for highlighting cells; it's a versatile featu
 <p align="center">
   <img src=" " alt="Alt text for the image">
   <br>
-  <em>Excel worksheet</em>
+  <em>A Heat Map</em>
 </p>
 
 ## Custom Combo Charts
 
 Excel allows for the combination of different chart types in a single graph, known as a combo chart. This capability is particularly useful when dealing with multiple data series that have different units of measurement. For example, in Excel, you can combine a column chart with a line chart to compare the revenue volume and the percentage profit for each product by using a combo chart. This approach provides a multifaceted view of your data, allowing you to visualize two different types of information simultaneously. Custom combo charts enable you to tell a more nuanced story by illustrating the relationship between different data series.
+<p align="center">
+  <img src=" " alt="Alt text for the image">
+  <br>
+  <em>Column and Line Combo Chart</em>
+</p>
  
 ## Using Sparklines
 Sparklines are mini-charts placed in individual cells, each representing a series of data in a compact, word-sized graphic. These are perfect for showing trends over time or variations in a dataset without taking up much space. Sparklines offer a quick, clear overview of your data's movement, making them an excellent tool for dashboards and reports where space is at a premium.
  <p align="center">
   <img src=" " alt="Alt text for the image">
   <br>
-  <em>Excel worksheet</em>
+  <em>Sparklines showing quarterly profits</em>
 </p>
 
 ## Advanced Chart Customization
@@ -43,7 +48,7 @@ Excel's chart tools provide extensive customization options, allowing you to ref
  <p align="center">
   <img src=" " alt="Alt text for the image">
   <br>
-  <em>Excel worksheet</em>
+  <em>Trendlines and Error Bars</em>
 </p>
 
 ## Interactive Timelines and Slicers
@@ -51,7 +56,7 @@ Interactive timelines and slicers can dramatically improve the user experience b
  <p align="center">
   <img src=" " alt="Alt text for the image">
   <br>
-  <em>Excel worksheet</em>
+  <em>Slicer to Show Units Sold per Countries</em>
 </p>
 
 ## Leveraging Power View
