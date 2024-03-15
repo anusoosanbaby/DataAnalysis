@@ -22,7 +22,7 @@ Use Ctrl+F option for Find and Replace
 Format the dashboard and add slicers
 
 <p align="center">
-  <img src=" " alt="Alt text for the image">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/5a6c5928-736e-44f9-aa61-b50e055445c8" alt="Alt text for the image">
   <br>
   <em>An Interactive Dashboard</em>
 </p>
