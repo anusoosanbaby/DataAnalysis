@@ -8,9 +8,9 @@ Your first step is to visit the Tableau Public website (https://www.tableau.com/
 Upon launching Tableau Public, you're greeted by the start screen, which serves as your gateway to creating data visualizations. Tableau Public supports connections to various data sources, including Excel files, text files, and Google Sheets. For learning purposes, download the video game sales data from the provided link: https://www.kaggle.com/datasets/gregorut/videogamesales?resource=download. Then, load the data into Tableau Public. Tableau Public will display a preview of your data, allowing you to see its organization before importing.
 
  <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/a471d075-7f75-4e64-9b88-639fcd8937db" alt="Alt text for the image">
   <br>
-  <em>Trendlines and Error Bars</em>
+  <em>Connect to Data</em>
 </p>
 
 To load data into Tableau, you can open your file by going to "File" -> "Open," or by selecting the "Text File" option from the "Connect to a File" section.
@@ -20,17 +20,17 @@ With your data loaded, it's time to build your first chart:
 Proceed to the "Sheet" tab at the bottom to open a new worksheet.Tableau Public organizes your data into "Dimensions" (categorical data) and "Measures" (numerical data).
  
 <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/73f88909-059b-43f7-afb9-23b6ae12d024" alt="Alt text for the image">
   <br>
-  <em>Trendlines and Error Bars</em>
+  <em>Create Your First Worksheet</em>
 </p>
 
 To create a basic visualization, drag a Dimension to the "Columns" shelf and a Measure to the "Rows" shelf. Tableau Public will automatically generate a chart based on your selection. You can change the chart type using the "Show Me" panel on the right.
 Here is a chart showing the sum of sales over the years.
 <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/b9a81aaa-1cd4-4568-b162-31b219314966" alt="Alt text for the image">
   <br>
-  <em>Trendlines and Error Bars</em>
+  <em>Sales over the Years</em>
 </p>
  
 ## Step 4: Customize Your Visualization
@@ -38,18 +38,18 @@ Now that you have a basic visualization, you can start to customize it to fit yo
 Experiment with different chart types from the "Show Me" panel to find the one that best represents your data. Use the "Filters" shelf to focus on specific parts of your data. Adjust your chart's appearance—colors, labels, and sizes—using the options under the "Marks" card.
 In the line chart above, I've added genre as a color dimension to display the sum of sales across different categories and included labels for clarity. To filter the data, I've incorporated platform as a filter option.
  <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/0fd10ff0-5642-4b59-8adf-da20ce5da669" alt="Alt text for the image">
   <br>
-  <em>Trendlines and Error Bars</em>
+  <em>Customized Line Chart</em>
 </p>
 
 ## Step5:Dashboard Creation
 If you have multiple worksheets in Tableau, you can arrange them in a dashboard.
 Once your worksheets are ready, open a new dashboard by clicking on the "New Dashboard" button in the bottom tab of the Tableau interface. This will provide you with a blank canvas. Drag and drop the worksheets you created from the Sheets list on the left side of the screen onto your dashboard canvas. You can arrange and resize these as needed to achieve your desired layout. Utilize the Dashboard pane to add interactive elements such as filters, actions (e.g., filter actions, highlight actions), and parameters. These elements not only make your dashboard more interactive but also allow users to explore the data in various ways. Use the Format and Layout options to refine the appearance of your dashboard. This includes setting the background color, adjusting the font sizes, and aligning the components for a polished look. Include titles, annotations, or instructional text to guide the users through your dashboard. This helps in making your dashboard self-explanatory and more user-friendly.
  <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/cd980af8-c7d7-47c8-9fda-70d543974074" alt="Alt text for the image">
   <br>
-  <em>Trendlines and Error Bars</em>
+  <em>A Sample Dashboard</em>
 </p>
 
 ## Step 6: Save and Share Your Visualization
@@ -57,9 +57,9 @@ One of the most powerful features of Tableau Public is the ability to share your
 Save your work to your Tableau Public profile by clicking "File" > "Save to Tableau Public As..."
 Log in to your Tableau Public account if prompted.
  <p align="center">
-  <img src="" alt="Alt text for the image">
+  <img src="https://github.com/anusoosanbaby/DataAnalysis/assets/20100713/0c340bcd-a373-4653-bef8-7d14af4bd0a5" alt="Alt text for the image">
   <br>
-  <em>Trendlines and Error Bars</em>
+  <em>Save the Dashboard</em>
 </p>
 
 Once saved, your visualization is now hosted on your Tableau Public profile, ready to be shared with the world. You can embed it in websites or share the link directly.
