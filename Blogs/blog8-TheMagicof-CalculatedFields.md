@@ -1,0 +1,21 @@
+# Empowering Analytics: The Magic of Calculated Fields Explained.
+
+Calculated fields work by allowing users to create new data from existing data within their dataset through custom expressions or formulas. When you create a calculated field, you're essentially defining a new column in your data model based on calculations from other fields. 
+## HOW IT WORKS
+
+- **Definition**: You start by defining a calculated field in your data analysis or visualization tool (like Tableau). This involves writing a formula or expression that specifies how the new data should be computed. The formula can include mathematical operations, string functions, date calculations, conditional statements, and more, depending on the capabilities of the tool.
+- **Calculation**: Once defined, the tool evaluates the formula using the data from the existing fields (columns) in your dataset. This calculation is done dynamically, meaning it updates as the underlying data changes or as the calculation's context changes (e.g., when filters are applied).
+- **Integration**: The result of this calculation is a new column that is added to your data model within the tool. It's important to note that this new column doesn't alter the original data source; it exists within the context of your project or analysis file. This means you can use the calculated field for analysis and visualization without changing the raw data.
+- **Usage**: You can use the calculated field just like any other field in your dataset. It can be used to create visualizations, as part of further calculations, or to filter and sort data. Because the calculated field is dynamically linked to its source data, any changes in the source data or updates to the calculation formula will automatically reflect in the calculated field.
+- **Performance**: It's worth noting that while calculated fields are powerful, their performance impact should be considered. Complex calculations or calculations applied across large datasets can affect the performance of your analysis or visualization, especially if they're computed in real-time.
+
+## HOW IT HELPS
+
+- **Dynamic Data Transformation**: Calculated functions enable dynamic data transformation. This means you can manipulate and change your data based on specific criteria or conditions without altering the original dataset. For example, you can use calculated functions to combine fields, calculate ratios, or create conditional metrics.
+- **Enhanced Data Analysis**: With calculated functions, users can go beyond basic analysis to explore more complex questions. They allow for the creation of custom metrics and dimensions that can provide deeper insights into the data, such as year-over-year growth, customer lifetime value, or profitability indexes.
+
+- **Customizable Aggregations**: Calculated functions offer the flexibility to create customized aggregations beyond the standard sum, average, minimum, and maximum. You can define specific conditions under which data should be aggregated or create weighted averages and other custom calculations that are tailored to your analytical needs.
+- **Improved Data Visualization**: In tools like Tableau, calculated functions can significantly enhance data visualization capabilities. By creating calculated fields, users can generate more meaningful visual representations of their data, such as highlighting specific trends, comparing performance against benchmarks, or visualizing complex formulas in a more digestible format.
+- **Conditional Logic and Filtering**: Calculated functions allow for the implementation of conditional logic within datasets. This means you can create fields that change based on certain conditions, such as categorizing sales into "high," "medium," and "low" based on predetermined thresholds. This ability greatly enhances data filtering and segmentation, allowing for more targeted analysis and reporting.
+
+In summary, calculated fields in Tableau are not just a feature; they are a powerful ally in the quest for data-driven insights. When used wisely, they unlock the full potential of data visualization, making it possible to tell more compelling data stories and make informed decisions based on comprehensive and customized analyses.
