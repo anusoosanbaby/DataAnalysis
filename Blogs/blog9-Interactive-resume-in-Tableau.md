@@ -1,4 +1,4 @@
-# Building an Interactive Resume with Tableau: Stand Out in the Job Market.#
+# Building an Interactive Resume with Tableau: Stand Out in the Job Market.
 
 Creating a resume in Tableau can be an innovative way to showcase your professional profile, especially if you're in a field related to data analysis, business intelligence, or any role where data visualization skills are valued. Tableau allows you to present your experience, skills, and accomplishments in an interactive and visually appealing format. Here's a general guide on how to create a resume in Tableau:
 
